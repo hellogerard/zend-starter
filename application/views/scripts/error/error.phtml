@@ -1,0 +1,20 @@
+<h1><?php echo $this->message ?></h1>
+
+<?php if (isset($this->exception)): ?>
+
+  <p>
+    <?php echo $this->exception->getMessage() ?>
+  </p>
+
+  <p>
+    <pre><?php echo $this->exception->getTraceAsString() ?></pre>
+  </p>
+
+  <p>
+    Request: <?php echo $this->request->getRequestUri(); ?>
+  </p>
+  <p>
+    <pre><?php echo var_export($this->request->getParams(), true) ?></pre>
+  </p>
+
+<?php endif ?>
