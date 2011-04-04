@@ -25,7 +25,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     protected function _initFrontController()
     {
         $front = Zend_Controller_Front::getInstance();
+        $front->setDefaultModule('public');
         $front->setControllerDirectory(APPLICATION_PATH . '/controllers');
+        $front->addModuleDirectory(APPLICATION_PATH . '/modules');
+        $front->setParam('prefixDefaultModule', true);
         return $front;
     }
 
